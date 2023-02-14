@@ -1,0 +1,42 @@
+ 
+/*============*/
+.footer{
+  background:#232f3e;
+  display: block;
+}
+.footer_about h3, .footer_menu h3, .footer_news h3{
+  font-family: "Times New Roman", Times, serif;
+  color:#ffffff;
+  margin-top: 10px;
+  
+}
+.footer_about ul, .footer_menu ul{
+  padding:0;
+}
+
+.footer_contact i, .footer_menu i{
+  color:#ffffff;
+  margin-right: 10px;
+  display:inline-block;
+  
+}
+.footer_contact p, .footer_menu a{
+  font-size: 14px;
+  color:#ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  display:inline-block;
+}
+.footer_menu a{
+  text-decoration: none;
+  padding: 5px;
+}
+.footer_paymentmethod{
+  margin-top:20px;
+}
+.footer_bottom{
+  background:#303547;
+}
+.footer_paymentmethod img{
+  height:50px;
+  background:#ffffff
+}

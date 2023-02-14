@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LMS Django</title>
+ </head>
+<body>
+	
+<style type="text/css">
+
+.cart, .profile{
+background: #14243a;
+padding: 10px;
+border-radius: 10px;
+
+}
+.totalcart{
+color: #fac10a;
+margin-right:2px;
+}
+
+.cart_info {
+  border: 1px solid #E6E4DF;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.cart_coverpage a img{
+max-width:75px;
+}
+.cart_quantity{
+width: 130px;
+}
+.cart_quantity input{
+height: 30px;
+}
+
+.continue_or_next{
+border: 1px solid #E6E4DF;
+padding-top:15px;
+}
+._to_shope, ._to_continue{
+background: #4cae4c;
+background-image: none;
+border: 0 none;
+border-radius: 3px;
+color: #FFFFFF;
+font-size: 15px;
+margin-bottom: 15px;
+display: inline-block;
+padding: 9px 16px;
+font-weight: bold;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+ 
+}
+._to_shope:hover, ._to_continue:hover{
+color:#FFFFFF;
+}
+._to_continue{
+background: #FEB82F;
+}
+.cart_coverpage {
+max-width:15px;
+}
+.cart_quantity{
+width: 130px;
+}
+.cart_quantity input{
+height: 30px;
+
+}
+
+.btn.btn-primary.bootstrap-touchspin-down, .btn.btn-primary.bootstrap-touchspin-up{
+background:#dddddd;
+padding:5px 10px;
+color:#000;
+height: 30px;
+border: 1px solid #ddd;
+border-radius:2px;
+}
+.continue_or_next{
+border: 1px solid #E6E4DF;
+padding-top:15px;
+}
+.name{
+  padding: 10px 80px;
+}
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+.col{
+  padding: 10px 40px;
+}
+.orderimg{
+  padding: 10px 200px;
+ 
+}
+.priceamount{
+  padding: 10px 30px;
+
+}
+.category{
+	padding: 90px;
+  }
+
+
+ 
+ </style>
+
+			{% block container %}
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="cart_info">
+					    <table class="table table-hover">
+					        <thead class="text-center">
+					            <tr>
+					                <th class="col" scope="col">#</th>
+					                <th scope="col" style="width: 250px">Name</th>
+					                <th scope="col" style="width: 250px">category</th>
+					                <th class="priceamount" scope="col">Price</th>
+					                 
+					            </tr> <br>
+					        </thead>
+					        <tbody class="text-center">
+					         
+				           		 <tr class="reading"> 
+					                <td class="orderimg"><a href=""><img src="{{ purchases.image.url }}"style="width: 100px" ></a></td>
+					                <td class="name">{{ purchases.name }}</td>
+					                <td class="category"> {{ purchases.category }}</td>
+                                    <td class="priceamount"> {{ purchases.price }} $.</td>
+					            </tr>
+					             
+					        </tbody>
+					    </table>
+						<div class="continue_or_next text-center">
+						<center><a href="{% url 'purchase' %}" class="btn _to_shope">Continue to Shope</a>
+						    	<a href="{% url 'details' %}" class="btn _to_continue">Proceed to Checkout</a> </center>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4" id="abc">
+
+				</div>
+			</div> 
+			{% endblock %}
+
+
+{% block scripts %}
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		summary();
+ 
+	}); 
+	function summary(){
+		$.ajax({
+			url : "summary",
+			type : "GET",
+			success : function(data){
+				$("#abc").html(data);
+			}
+		})
+	}
+	function updateCartItem(obj,id){
+		$.ajax({
+			url: "update/"+id+"/"+obj.value,
+			type: "GET",
+			data: {
+				bookid: id,
+				quantity: obj.value
+			},
+			success	:function(data){
+				$("#"+(id.toString())).html(data);
+				summary();
+				totalCart();
+			}
+		})
+	}
+
+	</script>
+{% endblock %}
+</body>
+</html>

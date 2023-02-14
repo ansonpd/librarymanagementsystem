@@ -1,0 +1,161 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> LMS Django </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+               crossorigin="anonymous">
+ </head>
+ <body>
+
+  {% include "store/navbarpurchase.html" %}<br><br> <br>
+  
+<style type="text/css"> 
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+html {
+  background-color :white
+}
+
+body {
+  color: #230000;
+  font-family: 'Quicksand', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: large;
+  padding: 1rem;
+}
+
+.main{
+  max-width: 1000px;
+}
+
+h1 {  
+    font-size: 45px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+  
+  max-width: 100%;
+  padding: 15px 20px; 
+  
+}
+
+.btn {
+background: #fadb50;
+background-image: none;
+border: 0 none;
+border-radius: 3px;
+color: #fffbfb;
+font-size: 15px;
+margin-bottom: 15px;
+display: inline-block;
+width: 100%;
+padding: 9px 16px;
+font-weight: bold;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+}
+
+.btn:hover {
+color:#000000;
+}
+
+.cards {
+  display :flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin:auto;
+  size-adjust:initial;
+  max-width: 900px;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 50rem) {
+  .cards_item {
+    width: 90%;
+     
+  }
+}
+
+.card {
+  background-color :rgb(255, 255, 255);
+  border-radius: 0.55rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display:  inline-block;
+  flex-direction: column;
+  overflow: hidden;
+  align-self: center;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: larger;
+  font-weight: 700;
+  width: 25px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+ 
+ </style>
+
+ <h1 style="text-align:center" class="display-4">New Published book</h1>
+ <br>
+ 
+{%for product in products%}
+<div class=" col-md-4 order-md-2 mb-4 " class="main">
+  
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+   {%if product.image%}
+  <img class="card-img-top" src="{{ product.image.url }}" alt=" Can't load image " >
+   {%endif%} <br>
+      <center><h5 class="card-title">{{ product.name }}</h5> </center>
+      <center><p  class="card-text"> {{ product.category }}</p> </center>
+      <center> <p class="card-text">Price - {{ product.price }}</p></center>
+      <center> <p class="card-text">Stock - {{ product.stock }}</p></center> <br>
+     <a href="{% url 'order' product.id %}"> <btn class="btn btn-long active" aria-pressed="true"> Purchase </btn> </a><br><br>
+      </div>
+    </li>   
+  </ul>
+</div><br>
+{% endfor %} 
+ 
+</body> 
+</html>

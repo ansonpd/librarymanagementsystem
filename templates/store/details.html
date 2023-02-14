@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+ {% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS Django</title>
+</head>
+<body>
+  
+ 
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container{
+  align-items: center;
+  width: 1160px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+ }
+
+.active{
+  text-decoration: none;
+  width: 100;
+   color: white;
+  padding: 20px 555px;
+  margin: 8px 0;
+  font-size: 18px;
+  background: #148501;
+border-radius: 3px;
+color: #ffffff;
+font-size: 15px;
+margin-bottom: 15px;
+display: inline-block;
+width: 100%;
+ font-weight: bold;
+ white-space: nowrap;
+ cursor: pointer;
+ border: 1px solid transparent;
+ }
+
+.btn:hover {
+color:#000000;
+}
+.file{
+  font-size: 25px;
+}
+.name{
+	padding: 10px 50px;
+	font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    		color: #00020a;
+    		background-color:#b8bfc1;
+     	}
+   
+</style>
+<body>
+ 
+<center><h3 class="file">Order Address</h3></center>
+ <div class="container">
+  <form method="POST">
+  {% csrf_token %}
+  
+    <label for="fname">Name</label>
+    <input type="text" id="Name" name="Name" required  placeholder="Your Name.." >
+
+    <label for="ename">Email</label>
+    <input type="text" id="Email" name="Email" required  placeholder="Your Email..">
+
+    <label for="fname">Address</label>
+    <input type="text" id="Address" name="Address" required  placeholder="Your Address..">
+
+    <label for="lname">Phone Number</label>
+    <input type="text" id="Phone" name="Phone" required  placeholder="Your Phone Number..">
+
+    <label for="country">District</label>
+     <select id="District" name="District" required  >
+	  <option value="googlepay">-select-</option>
+      <option value="kannur">Kannur</option>
+      <option value="kasarkode">Kasarkode</option>
+      <option value="palakkad">palakkad</option>
+      <option value="thrissur">Thrissur</option>
+      <option value="kollam">Kollam</option>
+      <option value="kozhikode">Kozhikode</option>
+      <option value="thiruvanathapuram">Thiruvanathapuram</option>
+     </select>
+
+    <label for="fname">Payment Method</label>
+      <select id="PaymentMethod" name="PaymentMethod" required >
+		<option value="googlepay">-select-</option>
+        <option value="googlepay">Google Pay </option>
+        <option value="phonepay">Phone Pay</option>
+        <option value="paytm">Paytm</option>  
+      </select>
+
+
+    <label for="lname">Transaction Id</label>
+    <input type="text" id="TransactionId" name="TransactionId" required  placeholder="Your Transaction Id..">
+    
+    <br> 
+  <br> <br> 
+       <button type="submit" class="btn active" style="border-radius: 0%;">Order Confirm </button>
+  	 
+    </div> <br><br>
+ </body>
+</html>
+
+

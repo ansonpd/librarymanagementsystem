@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Django</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <style type="text/css">
+     
+        .bs-example{
+            margin: 0px;
+    
+        }
+    .navbar-brand{
+      font-size: 20px;
+      font-family: sans-serif;
+    
+    }
+    .col-lg-6{
+      padding-left: 20%;
+    }
+    .jumbotron{
+      margin-bottom: 0px;
+    }
+    h1{
+        color: rgb(69, 39, 0);
+        background-color :aliceblue; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-shadow:rgb(0, 0, 0);
+        padding: 30px;
+    }
+    .carousel-inner{
+      background-color :aliceblue;
+    }
+    h4{
+        font-size:40px; 
+        font-family :cursive;
+        padding: 20px 20px;
+        
+    }
+    .lead{
+        font-size: 20px;
+        padding:10px;
+         
+        
+    }
+    .btn{
+  background-color: rgb(174, 134, 81);
+  color: aliceblue;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 400;
+  display:block;
+  width :10%;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 69, 15, 0.2);
+}
+.background {
+  background: grey;
+  background-blend-mode: darken;
+  background-size: cover;
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+ 
+.paragraph{
+ font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ text-align: center;
+ font-size: large;
+}
+    </style>
+    {% include "library/navbarabout.html" %}<br><br> 
+    <div class="main">
+      <div class="carousel-inner">
+        <div class="carousel-item active">  <center> <h1>ABOUT US</h1></center> 
+        
+ <hr class="line">
+        <h4> Library Management</h4>
+        <p class="lead">
+            Libraries are assumed to be general purpose, and may include display spaces and reading, meeting, and electronic workstations, as defined by the desired level of access to materials being stored
+         <br><br>
+            The word "library" seems to be used in so many different aspects now, from the brick-and-mortar public library to the digital library. Public libraries and indeed, all libraries are changing and dynamic places where librarians help people find the best source of information whether it's a book, a web site, or database entry.
+         </p>
+         <p class="paragraph"> " If you have a garden and a library, you have everything you need. Marcus Tullius Cicero The library is the temple of learning, and learning has liberated more people than all the wars in history. Carl T. Rowan If you want to get laid, go to college. If you want an education, go to the library."
+        </p>
+        <footer class="background">
+            <center> Copyright ©-All rights are reserved </center>
+        </footer>
+        {% include "library/footer.html" %}
+    </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	 
+	
+</head>
+<body>
+	<style type="text/css">
+		.footer{
+  background:#232f3e;
+  display: block;
+}
+.footer_about h3, .footer_menu h3, .footer_news h3{
+  font-family :Georgia, 'Times New Roman', Times, serif;
+  color:#ffffff;
+  margin-top: 20px;
+	
+  
+}
+.footer_about ul, .footer_menu ul{
+  padding:0;
+}
+
+.footer_contact i, .footer_menu i{
+  color:#ffffff;
+  margin-right: 10px;
+  display:inline-block;
+ 
+  
+}
+.footer_contact p, .footer_menu a{
+  font-size: 14px;
+  color:#ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  display:inline-block;
+  
+}
+ 
+.footer_paymentmethod{
+  margin-top:20px;
+}
+.footer_bottom{
+  background:#303547;
+}
+.footer_paymentmethod img{
+  height:94px;
+  background:#ffffff
+}
+ 
+</style>
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-xs-12 footer_menu">
+				<h3>Contact Us </h3>
+				<ul>
+					<li class="footer_contact">
+						<i class="fa fa-phone"></i>
+                          <p> +91 9090909090</p>
+					</li>
+					<li class="footer_contact">
+						<i class="fa fa-envelope"></i>
+						<p> django@gmail.com </p>
+					</li>
+					<li class="footer_contact">
+						<i class="fa fa-map-marker"></i>
+						<p>  Kerala,India</p>
+					</li>
+				</ul>
+			</div>
+		 
+			 <div class="col-sm-6 col-md-4 col-xs-12 footer_menu">
+				 
+			</div>
+			
+			<div class="col-sm-6 col-md-4 col-xs-12 footer_news">
+				<h3>We accept payment via</h3>
+				<div class="footer_paymentmethod">
+					<img src="{% static 'images/googlepay.jpeg' %}" alt="" />  
+					<img src="{% static 'images/paytm.jpeg' %}" alt="" />
+					<img src="{% static 'images/Phonepay.jpeg' %}" alt="" /> <br>
+				 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+</body>
+</html>
